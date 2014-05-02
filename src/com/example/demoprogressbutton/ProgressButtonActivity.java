@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class ProgressButtonActivity extends Activity {
@@ -33,7 +32,7 @@ public class ProgressButtonActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                mProgressBtn.setType(ProgressButton.TYPE_FILL);    // the fill type
+                mProgressBtn.setProgressType(ProgressButton.TYPE_FILL);    // the fill type
             }
         });
         mStrokeBtn = (Button)findViewById(R.id.type_stroke_btn);
@@ -41,7 +40,7 @@ public class ProgressButtonActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                mProgressBtn.setType(ProgressButton.TYPE_STROKE);    //the stroke type
+                mProgressBtn.setProgressType(ProgressButton.TYPE_STROKE);    //the stroke type
             }
         });
     }
@@ -79,7 +78,7 @@ public class ProgressButtonActivity extends Activity {
 
         @Override
         protected void onProgressUpdate(Integer... values) {
-            mProgressBtn.updateProgress(values[0]);
+            mProgressBtn.setProgress(values[0]);
         }
 
     }
